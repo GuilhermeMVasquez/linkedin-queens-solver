@@ -1,11 +1,12 @@
 import cv2 as cv
 import numpy as np
 import math
+from sys import argv
 
 # usage of opencv credits to Shanmukha Ranganath
 
 # Read the input image and save the original
-original = cv.imread("board.png")
+original = cv.imread(argv[1])
 # cv.imwrite("solution/original.png", original)
 
 # Convert the image to grayscale
@@ -182,4 +183,4 @@ for i in range(grid_size):
                 output_image[crown_y:crown_y+crown_size, crown_x:crown_x+crown_size] = crown
 
 # Save the output image with the solved board displayed
-cv.imwrite("solution/solve.png", output_image)
+cv.imwrite("static/solution.png", output_image)
